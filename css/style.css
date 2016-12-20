@@ -72,7 +72,7 @@ li {list-style-type: none;}
 }
 
 #lowerWidth {
-  max-width: 70%;
+  width: 50%;
 }
 
 #aboutMeText {
@@ -356,6 +356,9 @@ input {
 @media only screen and (max-width: 500px) {
   .parallax img {
     max-width: 400%;
+  }
+  #lowerWidth {
+    width: auto;
   }
 }
 @media only screen and (min-width: 1075px) {
