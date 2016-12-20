@@ -69,20 +69,19 @@
     <section id="Home">
       <div class="container-fluid">
         <div class="row">
-          <!-- <div class="parallax-window" id="paraContain" data-image-src="img/title.jpg"> -->
-          <div class="lax">
-
+          <div class="parallax-container1">
+            <div class="parallax"  id="paraContain"><img src="img/title.jpg" id="lowerMaxHeight">
+              <div class="col-xs-12">
                 <div id="titleContainer">
                   <h1 id="header">Andy Bando-Hess</h1>
                   <p>- Software/Web Developer - Dartmouth Sophomore -</p>
                 </div>
-
-
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- About -->
     <section id="aboutMe">
@@ -113,6 +112,11 @@
           </div>
         </div>
       </div>
+      <div class="parallax-container2">
+        <div class="parallax"><img src="img/discoInferno.jpg">
+          <p class="white" id="discoText">Andy as Heathcliffe in Disco Inferno</p>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
@@ -125,14 +129,14 @@
         <div class="inner contact">
           <div class="contact-form">
             <form name="myForm" id="contact-us" method="post" onsubmit="return validateForm()" action="http://formspree.io/abandohess@gmail.com">
-              <div class="col-xs-3"></div>
-              <div class="col-xs-6 wow animated" id="lowerWidth">
+              <div class="col-xs-3 margin"></div>
+              <div class="col-xs-6 wow animated inside" id="lowerWidth">
                 <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
                 <input type="email" name="_replyto" id="mail" required="required" class="form" placeholder="Email" />
                 <input type="text" name="subject" id="subject" class="form" placeholder="Subject" />
                 <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
               </div><!-- End Right Inputs -->
-              <div class="col-xs-3"></div>
+              <div class="col-xs-3 margin"></div>
               <div class="relative fullwidth col-xs-12">
                 <!-- Send Button -->
                 <button type="submit" id="submit" name="submit" value="Submit" class="form-btn semibold">Send Message</button>
@@ -158,13 +162,14 @@
     <section id="myPortfolio">
     </section>
 
+
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 
     <!-- Parallax Effect -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- <script src="js/parallax.min.js"></script> -->
 
     <script src="js/main.js"></script>
   </body>
