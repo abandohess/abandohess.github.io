@@ -308,3 +308,17 @@ input {
     background: transparent;
 
 }
+
+.lax {
+    /* The image used */
+    background-image: url("http://res.cloudinary.com/lwylcg3gm/image/upload/v1482257934/title_vplarh.jpg");
+
+    /* Set a specific height */
+    min-height: 720px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
