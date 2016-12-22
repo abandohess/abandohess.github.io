@@ -120,6 +120,9 @@ a.description {
 
 #aboutMeText {
   font-size: 1.4em;
+  text-align: center;
+  margin-right: 120px;
+  margin-left: 120px;
 }
 
 #iconContainer {
@@ -448,6 +451,12 @@ input {
     max-width: 150%;
   }
 }
+@media only screen and (max-width: 850px) {
+  #aboutImage {
+    max-width: 35%;
+    max-height: 35%;
+  }
+}
 @media only screen and (max-width: 790px) {
   .parallax img {
     max-width: 180%;
@@ -460,6 +469,10 @@ input {
 @media only screen and (max-width: 645px) {
   .parallax img {
     max-width: 210%;
+  }
+  #aboutMeText{
+    margin-left: 25px;
+    margin-right: 25px;
   }
 }
 @media only screen and (max-width: 560px) {
