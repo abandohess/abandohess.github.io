@@ -249,6 +249,12 @@ p.nav-active {
   width: 100%;
 }
 
+#aboutImage {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  max-width: 35%;
+  max-height: 35%;
+}
 
 #contact{ padding:10px 0 10px; }
 
