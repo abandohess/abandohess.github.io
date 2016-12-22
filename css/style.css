@@ -43,20 +43,63 @@ li {list-style-type: none;}
 }
 
 #resizeMe {
-  max-width:77%;
-  max-height:77%;
+  max-width:60%;
+  max-height:60%;
   box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 40px;
 }
 
-#aboutMe {
+#headerUp {
+  margin-top: -7px;
+}
+
+.rowMargin {
+  margin-bottom: 45px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.headerMargin {
+  margin-top: 80px;
 }
 
 .aboutMeF2 {
   padding-top: 90px;
   padding-bottom: 90px;
   /*background: #3498db;*/
-  background: #00693E;
+  background: #ecf0f1;
   position: relative;
+}
+
+.company {
+  color: #3676CA;
+  font-size: 1.45em;
+  font-weight: 500;
+  style:
+}
+
+a.company {
+  text-decoration: none !important;
+}
+
+a.description {
+  text-decoration: none !important;
+}
+
+.position {
+  color: #619516;
+  font-size: 1.12em;
+  font-weight: 500;
+}
+
+.location {
+  color: black;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-top: -8px;
 }
 
 #contactMe {
@@ -76,7 +119,7 @@ li {list-style-type: none;}
 }
 
 #aboutMeText {
-  font-size: 1.7em;
+  font-size: 1.4em;
 }
 
 #iconContainer {
@@ -282,6 +325,18 @@ input {
 ::-moz-placeholder {color: #2F3536; opacity: 1;}
 :-moz-placeholder {color: #2F3536; opacity: 1;}
 
+#footer {
+  background: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: -10px;
+}
+#footerText {
+  margin-top: 3px;
+  text-align: center;
+  color: white;
+}
+
 .parallax-container1 {
   position: relative;
   overflow: hidden;
@@ -365,8 +420,5 @@ input {
   #lowerMaxHeight {
     max-height: 115%;
   }
-
-.full {
-  width: 100%;
 
 }
