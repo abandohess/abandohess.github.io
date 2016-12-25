@@ -11,9 +11,13 @@
     <link rel="stylesheet" type="text/css" href=css/style.css>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> -->
 
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 
 
@@ -47,7 +51,7 @@
           <ul class="nav navbar-nav navbar-right">
               <li><a class="toggle-drop" href="#Home" id="homie"><p id="asbestos" class="lessWhite" href="#Home">Home</p></a></li>
               <li><a class="toggle-drop" href="#About" id="aboutie"><p id="asbestos" href="#aboutMe">About</p></a></li>
-              <!-- <li><a class="toggle-drop" href="#Portfolio" id="porty"><p id="asbestos" href="#myPortfolio">Portfolio</p></a></li> -->
+              <li><a class="toggle-drop" href="#Portfolio" id="porty"><p id="asbestos" href="#myPortfolio">Projects</p></a></li>
               <li><a class="toggle-drop" href="#Contact" id="conty"><p id="asbestos" href="#contactMe">Contact</p></a></li>
           </ul>
         </div>
@@ -197,32 +201,169 @@
 
     <!-- Portfolio -->
     <section id="myPortfolio">
-      <div>
+      <br>
+      <br>
+      <h2 class="text-center projectsHeader">Selected Projects</h2>
+
+      <div class="container-fluid">
+
+        <div class="row odd">
+          <div class="col-md-4">
+            <img class="img-responsive center-block resizePort" src="img/compression.jpg" data-toggle="modal" data-target="#compressionModal">
+          </div>
+          <div class="col-md-7 mediaText">
+            <h4 class="mediaHeader">File Compression</h4>
+            <p>This project is a recreation of a form of lossless file compression developed by David Huffman. Instead of using 7 bits to encode each character, as ASCII does, it uses a variable-length encoding of characters. Frequently occurring characters get shorter code words than infrequently occurring ones.</p>
+          </div>
+        </div>
+
+        <div class="row even">
+          <div class="col-md-4">
+            <img class="img-responsive center-block resizePort" src="img/sketchServer.jpg" data-toggle="modal" data-target="#sketchModal">
+          </div>
+          <div class="col-md-7 mediaText">
+            <h4 class="mediaHeader">Sketch Server</h4>
+            <p>This is a collaborative graphical editor built using the swing library. Multiple clients connect to a server, and whatever editing any of them does, the others see. It handles multiple objects at a time, and can draw rectangles, line segments, and "freehand" shapes in addition to ellipses.</p>
+          </div>
+        </div>
+
+        <div class="row odd">
+          <div class="col-md-4">
+            <img class="img-responsive center-block resizePort" src="img/pixelManipulation.jpg" data-toggle="modal" data-target="#pixelModal">
+          </div>
+          <div class="col-md-7 mediaText">
+            <h4 class="mediaHeader">Pixel Manipulation</h4>
+            <p>In this program, the user clicks on a pixel in the webcam to select a color. We then employ a "region growing" algorithm to expand outward from the selected pixel, detecting and recoloring all other pixels of a similar color. In painting mode, the user can use the detected region as a paintbrush on the webcam.</p>
+          </div>
+        </div>
+
+        <div class="row even">
+          <div class="col-md-4">
+            <img class="img-responsive center-block resizePort" src="img/colider.png" data-toggle="modal" data-target="#collisionModal">
+          </div>
+          <div class="col-md-7 mediaText">
+            <h4 class="mediaHeader">Collision Detection</h4>
+            <p>This project recreates an efficient approach to detecting collisions in a two-dimensional space. The inefficient approach is to check each object to see if it's colliding with another object. Instead, just as a binary search tree enables faster look-up than linear search in one dimension, a point quadtree enables faster look-up in two dimensions. </p>
+          </div>
+        </div>
+
+        <div class="row odd">
+          <div class="col-md-4">
+            <img class="img-responsive center-block resizePort" src="img/landing1.jpg" data-toggle="modal" data-target="#landingPageModal">
+          </div>
+          <div class="col-md-7 mediaText">
+            <h4 class="mediaHeader">Slack.com Landing Page</h4>
+            <p>This recreation (with a few tweaks) of <a href="https://slack.com/">slack.com</a>'s landing page was an experiment through which I learned html5 and CSS3. It is iOS-friednly and includes all the responsive features of the original website.</p>
+          </div>
+        </div>
+
+        <p class="text-center">Project Outlines from CS10 Taught by Christopher Bailey-Kellogg Found <a href="http://www.cs.dartmouth.edu/~cbk/classes/10/16fall/schedule.php">Here</a></p>
       </div>
     </section>
+
+    <!-- Modals -->
+    <div class="modal fade" id="sketchModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sketch Server</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive shadowPicture" src="img/sketchServer.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="compressionModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">File Compression</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive shadowPicture" src="img/compression.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="pixelModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Pixel Manipulation</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive shadowPicture" src="img/pixelManipulation.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="collisionModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Collision Detection</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive shadowPicture" src="img/colider.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="landingPageModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Slack.com Landing Page</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive shadowPicture" src="img/landing4.jpg">
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+
+
+
 
     <!-- Contact -->
     <section id="contactMe">
 
       <br>
-      <h2 class="text-center" id="centerHeader">Contact</h2>
+      <h2 class="text-center centerHeader">Contact</h2>
 
       <div class="container-fluid">
         <div class="inner contact">
           <div class="contact-form">
             <form name="myForm" id="contact-us" method="post" onsubmit="return validateForm()" action="http://formspree.io/abandohess@gmail.com">
-              <div class="col-xs-3"></div>
-              <div class="col-xs-6 wow animated" id="lowerWidth">
+              <div class="wow animated" id="lowerWidth">
                 <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
                 <input type="email" name="_replyto" id="mail" required="required" class="form" placeholder="Email" />
                 <!-- <input type="text" name="subject" id="subject" class="form" placeholder="Subject" /> -->
                 <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
               </div><!-- End Right Inputs -->
-              <div class="col-xs-3"></div>
-              <div class="relative fullwidth col-xs-12">
-                <!-- Send Button -->
-                <button type="submit" id="submit" name="submit" value="Submit" class="form-btn semibold">Send Message</button>
-              </div><!-- End Bottom Submit -->
+
+              <button type="submit" id="submit" name="submit" value="Submit" class="form-btn semibold">Send Message</button>
+
               <!-- Clear -->
               <div class="clear"></div>
             </form>
@@ -242,8 +383,8 @@
       <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline" id="iconMargin">
         <li> <a href="https://www.facebook.com/andy.bandohess"><i class="fa fa-facebook"></i></a></li>
         <li> <a href="https://github.com/abandohess"><i class="fa fa-github"></i></a></li>
-        <li> <a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+        <!-- <li> <a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+        <!-- <li> <a href="#"><i class="fa fa-instagram"></i></a></li> -->
         <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
         <li> <a href="mailto:anders.bando-hess.19@dartmouth.edu"><i class="fa fa-envelope-o"></i></a></li>
       </ul>
@@ -251,11 +392,12 @@
 
     </section>
 
-
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+
+    <!--modal -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Parallax Effect -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

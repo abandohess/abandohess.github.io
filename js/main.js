@@ -151,13 +151,4 @@ $('document').ready(function($) {
       }
   });
 
-  $(function() {
-    if (is.mobile() || is.tablet()) {
-      $('.margin').removeClass('col-xs-3');
-      $('.margin').addClass('col-xs-1');
-      $('.inside').removeClass('col-xs-6');
-      $('.inside').addClass('col-xs-10');
-    }
-  });
-
 });

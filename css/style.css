@@ -109,13 +109,20 @@ a.description {
   position: relative;
 }
 
-#centerHeader {
-  font-size: 3em;
+.centerHeader {
+  font-size: 2.3em;
   margin-bottom: 30px;
 }
 
+.projectsHeader {
+  font-size: 2.3em;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
 #lowerWidth {
-  width: 50%;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 #aboutMeText {
@@ -342,7 +349,7 @@ input {
   margin-bottom: -10px;
 }
 #iconMargin {
-  margin-top: 40px;
+  margin-top: 0px;
   text-align: center;
 }
 #footerText {
@@ -436,6 +443,43 @@ input {
   z-index: 10000000000;
 }
 
+#myPortfolio {
+  background: #ecf0f1;
+}
+
+.resizePort {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width:60%;
+  max-height:60%;
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: opacity .75s; /* Safari */
+  transition: opacity .75s;
+  /*margin-bottom: 40px;*/
+}
+
+.resizePort:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.shadowPicture {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.even {background: #ecf0f1;}
+.odd {background: #F5F5F5;}
+
+.mediaHeader {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+.mediaText {
+}
+
 @media only screen and (max-width: 766px) {
   #opaque-navbar {
     background-color: black !important;
@@ -465,6 +509,11 @@ input {
     max-width: 40%;
     max-height: 40%;
   }
+  #lowerWidth {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
 }
 @media only screen and (max-width: 645px) {
   .parallax img {
@@ -489,7 +538,11 @@ input {
     max-width: 400%;
   }
   #lowerWidth {
-    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .mediaText {
+    text-align: center;
   }
 }
 @media only screen and (min-width: 1075px) {
