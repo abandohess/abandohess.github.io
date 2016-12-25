@@ -473,6 +473,10 @@ input {
   margin-top: 12px;
 }
 
+.projectText {
+  font-size: 1.3em;
+}
+
 .even {background: #ecf0f1;}
 .odd {background: #F5F5F5;}
 
