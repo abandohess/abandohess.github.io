@@ -358,6 +358,11 @@ input {
   color: black;
 }
 
+.gif {
+  margin: auto;
+
+}
+
 /*Change icons size here*/
 .social-icons .fa {
 	font-size: 1.8em;
