@@ -563,12 +563,20 @@ input {
   .mediaText {
     text-align: center;
   }
+  .discoText {
+    font-size: 1em;
+  }
 }
+@media only screen and (min-width: 1000px) {
+  #lowerMaxHeight {
+    max-height: 105%;
+  }
+}
+
 @media only screen and (min-width: 1000px) {
   #lowerMaxHeight {
     max-height: 115%;
   }
-
 }
 
 
