@@ -443,7 +443,7 @@ input {
   max-height: 500%;
 }
 
-#discoText {
+.discoText {
   margin-left: 10px;
   margin-top: 7px;
   font-size: 1.3em;
