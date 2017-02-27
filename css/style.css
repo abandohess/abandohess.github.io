@@ -567,13 +567,16 @@ input {
     font-size: 1em;
   }
 }
-@media only screen and (min-width: 1000px) {
+#change {
+  color: red !important
+}
+@media only screen and (min-width: 1300px) and (max-width: 1500px) {
   #lowerMaxHeight {
     max-height: 105%;
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) and (max-width: 1299px){
   #lowerMaxHeight {
     max-height: 115%;
   }
