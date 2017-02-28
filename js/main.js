@@ -69,11 +69,13 @@ $('document').ready(function($) {
       $('#opaque-navbar').removeClass('opaque');  //navbar becomes clear
       $('[id="asbestos"]').removeClass('white');
       $('.lessWhite').addClass('lesssWhite');
+      $('.bottomleft').removeClass('removetext');
     }
     else {
       $('#opaque-navbar').addClass('opaque'); //navbar becomes black
       $('[id="asbestos"]').addClass('white');
       $('.lessWhite').removeClass('lesssWhite');
+      $('.bottomleft').addClass('removetext');
     }
   });
 

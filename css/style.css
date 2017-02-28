@@ -566,10 +566,21 @@ input {
   .discoText {
     font-size: 1em;
   }
+  .bottomleft {
+    font-size: 1em;
+  }
 }
-#change {
-  color: red !important
+.bottomleft {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    font-size: 1.3em;
 }
+
+.removetext {
+  /*opacity: 0 !important;*/
+}
+
 @media only screen and (min-width: 1651px) and (max-width: 2000px) {
   #lowerMaxHeight {
     max-height: 190%;
