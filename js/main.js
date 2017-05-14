@@ -2,7 +2,7 @@ $('document').ready(function($) {
 
   $(window).load(function() {
   // Animate loader off screen
-    $(".se-pre-con").fadeOut("slow");;
+    $(".container").fadeOut("slow");;
   });
 
   ;(function ($) {
@@ -69,13 +69,13 @@ $('document').ready(function($) {
       $('#opaque-navbar').removeClass('opaque');  //navbar becomes clear
       $('[id="asbestos"]').removeClass('white');
       $('.lessWhite').addClass('lesssWhite');
-      $('.bottomleft').removeClass('removetext');
+      $('.bottomleft').removeClass('bottomlefthidden');
     }
     else {
       $('#opaque-navbar').addClass('opaque'); //navbar becomes black
       $('[id="asbestos"]').addClass('white');
       $('.lessWhite').removeClass('lesssWhite');
-      $('.bottomleft').addClass('removetext');
+      $('.bottomleft').addClass('bottomlefthidden');
     }
   });
 
@@ -158,4 +158,8 @@ $('document').ready(function($) {
       }
   });
 
+  setTimeout(function() {
+    $('body').addClass('loaded');
+    }, 2200);
+    $(".hideDrawers").css({"visibility": "visible"});
 });

@@ -9,6 +9,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href=css/style.css>
+    <link rel="stylesheet" type="text/css" href=css/preloader.css>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -18,7 +19,13 @@
 
 
   <body>
-    <div class="se-pre-con"></div>
+
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- <div class="se-pre-con"></div> -->
 
     <nav class="navbar navbar-inverse navbar-fixed-top" id="opaque-navbar" role="navigation">
       <div class="container-fluid">
@@ -50,13 +57,15 @@
         </div>
 
         <!-- Unfolding Drawer Menu -->
-        <div class="menu">
-          <ul id="disappear">
-            <a href="#Home" class="hamburgerItem" id="homie"><li>Home</li></a>
-            <a href="#About" class="hamburgerItem" id="aboutie"><li>About</li></a>
-            <a href="#Portfolio" class="hamburgerItem" id="porty"><li>Projects</li></a>
-            <a href="#Contact" class="hamburgerItem" id="conty"><li>Contact</li></a>
-          </ul>
+        <div class="hideDrawers">
+          <div class="menu">
+            <ul id="disappear">
+              <a href="#Home" class="hamburgerItem" id="homie"><li>Home</li></a>
+              <a href="#About" class="hamburgerItem" id="aboutie"><li>About</li></a>
+              <a href="#Portfolio" class="hamburgerItem" id="porty"><li>Projects</li></a>
+              <a href="#Contact" class="hamburgerItem" id="conty"><li>Contact</li></a>
+            </ul>
+          </div>
         </div>
 
       </div> <!-- end container-fluid -->
