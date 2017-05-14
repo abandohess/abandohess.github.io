@@ -1,8 +1,14 @@
 $('document').ready(function($) {
 
-  $(window).load(function() {
+  // setTimeout(function() {
+  //   $('body').addClass('loaded');
+  //   }, 2200);
+
+  $('.titleLoad').load(function() {
   // Animate loader off screen
-    $(".container").fadeOut("slow");;
+    $('body').addClass('loaded');
+    $(".hideDrawers").css({"visibility": "visible"});
+    //$(".container").fadeOut("slow");;
   });
 
   ;(function ($) {
@@ -158,8 +164,4 @@ $('document').ready(function($) {
       }
   });
 
-  setTimeout(function() {
-    $('body').addClass('loaded');
-    }, 2200);
-    $(".hideDrawers").css({"visibility": "visible"});
 });
