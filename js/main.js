@@ -1,18 +1,16 @@
 $('document').ready(function($) {
 
-  // setTimeout(function() {
-  //   $('body').addClass('loaded');
-  //   }, 2200);
-
+  // only display page after home image is loaded
   $('.titleLoad').load(function() {
   // Animate loader off screen
     $('body').addClass('loaded');
+    // prevent collapsable mobile menu from showing while page is loading
     $(".hideDrawers").css({"visibility": "visible"});
-    //$(".container").fadeOut("slow");;
   });
 
+  // parallax javascript taken from Materialize library
+  // had to modify slightly to be used on my website
   ;(function ($) {
-
       $.fn.parallax = function () {
         var window_width = $(window).width();
         // Parallax Scripts
@@ -69,7 +67,7 @@ $('document').ready(function($) {
 
   $('.parallax').parallax();
 
-  //Transparent Menu
+  //Menu becomes black when user scrolls down page
   $(window).scroll(function() {
     if($(this).scrollTop() < 50) { /*height in pixels when the navbar becomes non opaque*/
       $('#opaque-navbar').removeClass('opaque');  //navbar becomes clear
@@ -85,7 +83,7 @@ $('document').ready(function($) {
     }
   });
 
-  // Smooth scrolling
+  // Smooth scrolling for menu buttons
   var scroll = function(key, val) {
   	$(key).click(function() {
       $('body, html').stop().animate({
