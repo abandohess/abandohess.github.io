@@ -1,7 +1,7 @@
 $('document').ready(function($) {
 
   // only display page after home image is loaded
-  $('.titleImage').ready(function() {
+  $(window).load(function() {
   // Animate loader off screen
     $('body').addClass('loaded');
     // prevent collapsable mobile menu from showing while page is loading
