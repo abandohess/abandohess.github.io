@@ -84,7 +84,11 @@ $('document').ready(function($) {
     $('#discoPic').removeClass('parallax');
     $('#discoPic').addClass('parallaxAlt');
     $("#discoPic").css({"min-height": 675});
+    if (window_width > 2300) {
+      $("#discoPic").css({"min-height": 800});
+    }
   }
+
   $('.parallax').parallax();
 
   // When window is resized add/remove parallax effect if window is too big/small
@@ -96,6 +100,9 @@ $('document').ready(function($) {
       $('#discoPic').removeClass('parallax');
       $('#discoPic').addClass('parallaxAlt');
       $("#discoPic").css({"min-height": 675});
+      if (window_width > 2300) {
+        $("#discoPic").css({"min-height": 800});
+      }
     }
     else if (window_width <= max_width && !hasParallax) {
       $('#discoPic').removeClass('parallaxAlt');
