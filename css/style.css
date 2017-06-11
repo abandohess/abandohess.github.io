@@ -463,9 +463,9 @@ input {
           transform: translateX(-50%);
 }
 
-.parallaxAlt img {
+.parallaxAlt {
   position: absolute;
-  min-width: 120%;
+  /*min-width: 120%;*/
   transform: translate3d(0%, 0px, 0px) !important;
   z-index: -1;
 }

@@ -80,6 +80,7 @@ $('document').ready(function($) {
   var max_width = 1860;
   window_width = $(window).width();
   if (window_width > max_width) {
+    $(".parallaxAlt").css({"width": window_width});
     $('#discoPic').removeClass('parallax');
     $('#discoPic').addClass('parallaxAlt');
     $("#discoPic").css({"min-height": 675});
@@ -91,6 +92,7 @@ $('document').ready(function($) {
     window_width = $(window).width();
     var hasParallax = $("#discoPic").hasClass("parallax");
     if (window_width > max_width && hasParallax) {
+      $(".parallaxAlt").css({"width": window_width});
       $('#discoPic').removeClass('parallax');
       $('#discoPic').addClass('parallaxAlt');
       $("#discoPic").css({"min-height": 675});
