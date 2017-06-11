@@ -199,7 +199,7 @@ a.description {
 
 #logo {
   margin-top: 8px;
-  max-width: 40%;
+  max-width: 120px;
 }
 
 #asbestos:hover {
@@ -558,6 +558,9 @@ input {
   }
   .menu {
     visibility: visible;
+  }
+  #logo {
+    margin-left: 14px;
   }
 }
 

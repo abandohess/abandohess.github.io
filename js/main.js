@@ -1,5 +1,11 @@
 $('document').ready(function($) {
 
+  var window_height = $(window).height();
+  if (window_height > 720) {
+    // make sure home image looks good on any screen size
+    $(".titleImage").css({"min-height": window_height});
+  }
+
   // only display page after home image is loaded
   $(window).load(function() {
   // Animate loader off screen
