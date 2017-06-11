@@ -82,7 +82,7 @@ $('document').ready(function($) {
   if (window_width > max_width) {
     $('#discoPic').removeClass('parallax');
     $('#discoPic').addClass('parallaxAlt');
-    $("#discoPic").css({"min-height": 625});
+    $("#discoPic").css({"min-height": 675});
   }
   $('.parallax').parallax();
 
@@ -93,7 +93,7 @@ $('document').ready(function($) {
     if (window_width > max_width && hasParallax) {
       $('#discoPic').removeClass('parallax');
       $('#discoPic').addClass('parallaxAlt');
-      $("#discoPic").css({"min-height": 625});
+      $("#discoPic").css({"min-height": 675});
     }
     else if (window_width <= max_width && !hasParallax) {
       $('#discoPic').removeClass('parallaxAlt');
