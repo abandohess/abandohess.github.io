@@ -1,7 +1,7 @@
 $('document').ready(function($) {
 
   // only display page after home image is loaded
-  $('.titleLoad').load(function() {
+  $('.titleImage').ready(function() {
   // Animate loader off screen
     $('body').addClass('loaded');
     // prevent collapsable mobile menu from showing while page is loading
@@ -64,8 +64,28 @@ $('document').ready(function($) {
         });
       };
   }( jQuery ));
-
+  var max_width = 1860;
+  window_width = $(window).width();
+  if (window_width > max_width) {
+    $('#discoPic').removeClass('parallax');
+    $('#discoPic').addClass('parallaxAlt');
+  }
   $('.parallax').parallax();
+
+  // When window is resized add/remove parallax effect if window is too big/small
+  $(window).resize(function() {
+    window_width = $(window).width();
+    var hasParallax = $("#discoPic").hasClass("parallax");
+    if (window_width > max_width && hasParallax) {
+      $('#discoPic').removeClass('parallax');
+      $('#discoPic').addClass('parallaxAlt');
+    }
+    else if (window_width <= max_width && !hasParallax) {
+      $('#discoPic').removeClass('parallaxAlt');
+      $('#discoPic').addClass('parallax');
+      $('.parallax').parallax();
+    }
+  });
 
   //Menu becomes black when user scrolls down page
   $(window).scroll(function() {

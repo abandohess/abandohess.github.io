@@ -1,3 +1,13 @@
+.titleImage {
+background: url(../img/title.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+min-height: 720px;
+overflow: hidden;
+}
+
 nav {
   font-size: 1.5em;
   padding: 2px;
@@ -185,6 +195,11 @@ a.description {
 #asbestos {
   color: #7f8c8d;
   transition: color .5s ease 0s;
+}
+
+#logo {
+  margin-top: 8px;
+  max-width: 40%;
 }
 
 #asbestos:hover {
@@ -443,6 +458,14 @@ input {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+
+.parallaxAlt img {
+  position: absolute;
+  max-width: 100%;
+  transform: translate3d(0%, 0px, 0px) !important;
+  z-index: -1;
+}
+
 #lowerMaxHeight {
   max-height: 500%;
 }
