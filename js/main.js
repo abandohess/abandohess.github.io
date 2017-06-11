@@ -1,6 +1,7 @@
 $('document').ready(function($) {
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  window_width = $(window).width();
+  if( window_width < 500 ) {
     document.getElementById('notMobile').style.display = 'none';
     document.getElementById('mobile').style.display = 'inline';
   }
