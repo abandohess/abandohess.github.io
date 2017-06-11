@@ -465,7 +465,7 @@ input {
 
 .parallaxAlt img {
   position: absolute;
-  max-width: 100%;
+  /*max-width: 100%;*/
   transform: translate3d(0%, 0px, 0px) !important;
   z-index: -1;
 }
