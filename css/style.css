@@ -19,6 +19,10 @@ body {
 
 li {list-style-type: none;}
 
+#mobile {
+  display: none;
+}
+
 #paraContain {
   display: flex;
   align-items: center;
@@ -561,6 +565,12 @@ input {
   }
   #logo {
     margin-left: 14px;
+  }
+}
+
+@media only screen and (min-width: 766px) {
+  .menu {
+    visibility: hidden;
   }
 }
 

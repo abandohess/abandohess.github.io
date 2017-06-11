@@ -1,9 +1,15 @@
 $('document').ready(function($) {
 
-  var window_height = $(window).height();
-  if (window_height > 720) {
-    // make sure home image looks good on any screen size
-    $(".titleImage").css({"min-height": window_height});
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    document.getElementById('notMobile').style.display = 'none';
+    document.getElementById('mobile').style.display = 'inline';
+  }
+  else {
+    var window_height = $(window).height();
+    if (window_height > 720) {
+      // make sure home image looks good on any screen size
+      $(".titleImage").css({"min-height": window_height});
+    }
   }
 
   // only display page after home image is loaded
