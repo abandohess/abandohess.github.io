@@ -179,22 +179,24 @@ $('document').ready(function($) {
       var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
       var windowHeight = $(window).height(); // get the height of the window
       var docHeight = $(document).height();
-
       for (var i=0; i < aArray.length; i++) {
           var theID = aArray[i];
-          var divPos = $(theID).offset().top -80; // get the offset of the div from the top of page
-          var divHeight = $(theID).height(); // get the height of the div in question
+          // prevent undefined error
+          if (theID != null) {
+            var divPos = $(theID).offset().top -80; // get the offset of the div from the top of page
+            var divHeight = $(theID).height(); // get the height of the div in question
 
-          if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-            if (!$("p[href='" + theID + "']").hasClass("lesssWhite")){
-              $("p[href='" + theID + "']").addClass("nav-active");
+            if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+              if (!$("p[href='" + theID + "']").hasClass("lesssWhite")){
+                $("p[href='" + theID + "']").addClass("nav-active");
+              }
+              if ($("p[href='" + theID + "']").hasClass("lesssWhite") && $("p[href='" + theID + "']").hasClass("nav-active")) {
+                $("p[href='" + theID + "']").removeClass("nav-active");
+              }
             }
-            if ($("p[href='" + theID + "']").hasClass("lesssWhite") && $("p[href='" + theID + "']").hasClass("nav-active")) {
-              $("p[href='" + theID + "']").removeClass("nav-active");
+            else {
+                $("p[href='" + theID + "']").removeClass("nav-active");
             }
-          }
-          else {
-              $("p[href='" + theID + "']").removeClass("nav-active");
           }
       }
 
