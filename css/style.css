@@ -88,6 +88,8 @@ li {list-style-type: none;}
   position: relative;
 }
 
+.silver{ background: #bdc3c7 !important;}
+
 .company {
   color: #3676CA;
   font-size: 1.45em;
@@ -275,6 +277,8 @@ p.nav-active {
 .lesssWhite {
   color: #7f8c8d;
 }
+
+.pointer { cursor: pointer; }
 
 #leaveSpace {
   margin-top: 60px;
