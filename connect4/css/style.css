@@ -1,0 +1,39 @@
+body { background-color: red;}
+table { margin: auto; }
+.boardBackground {
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 50px;
+  margin: auto; margin-top: 90px;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.menu-container {
+  margin: auto;
+  margin-left: -160px;
+}
+.circle {
+  width: 75px;
+  height: 75px;
+  margin: 4px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background: #2ecc71;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.circle:hover {
+  cursor: pointer;
+}
+
+.clicked1 {
+  background: #e74c3c !important;
+}
+.clicked2 {
+  background: #2980b9 !important;
+}
