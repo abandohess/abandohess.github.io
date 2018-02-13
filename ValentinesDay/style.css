@@ -1,0 +1,92 @@
+body {
+  font-family: Raleway,sans-serif;
+}
+
+#titleImage {
+  background: url(./img/title.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 1000px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#valentinesSvg {
+  margin-top: -150px;
+  margin-left: 600px;
+  width: 50%;
+}
+
+#pic1 {
+  padding-top: 90px;
+  background: #e74c3c;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+
+#pic2 {
+  padding-top: 90px;
+  background: #3498db;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+
+#pic3 {
+  padding-top: 90px;
+  background: #2ecc71;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+
+#pic4 {
+  padding-top: 90px;
+  background: #9b59b6;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+
+#pic5 {
+  padding-top: 90px;
+  background: #f1c40f;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+
+#finalPic {
+  background: url(./img/formal.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 1000px;
+}
+
+#valentinesSvg2 {
+  position: fixed;
+  top: 0;
+  right: -120px;
+  width: 45%;
+  z-index: -1;
+}
+
+.loveText {
+  font-size: 3em;
+  text-align: center;
+  margin-right: 120px;
+  margin-left: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.shadowPicture {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
