@@ -528,7 +528,8 @@ input {
   margin-top: 30px;
 }
 
-.mediaText {
+.description-text{
+  font-size: 1.3em;
 }
 
 
@@ -612,6 +613,9 @@ input {
   }
   .bottomleft {
     font-size: 7pt;
+  }
+  .description-text{
+    font-size: 1em;
   }
 }
 .bottomleft {
