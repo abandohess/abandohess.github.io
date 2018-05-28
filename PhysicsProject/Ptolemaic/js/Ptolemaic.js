@@ -10,15 +10,23 @@ let timeScale = 1;
 
 let scale_factor = 0.1; // Avoids Z-buffer precision problems
 
-let earth;
+let earth, moon;
 
-let sunOrbitalPeriod = 1      ;
+let sunOrbitalPeriod = 1;
+let moonOrbitalPeriod = 1.5;
 
 let sunRadius = scale_factor*1392/100;
 let sunTheta = 0;
 let sunMajorAxis = scale_factor*149.597;
 let sunEccentricity = 0.0167;
 let sunMinorAxis = sunMajorAxis*Math.sqrt(1-sunEccentricity*sunEccentricity);
+
+let moonRadius = scale_factor*2;
+let moonTheta = 0;
+let moonMajorAxis = scale_factor*40.909;
+let moonEccentricity = 1/360*2*Math.PI*7;
+let moonObliquity = 0.205;
+let moonMinorAxis = moonMajorAxis*Math.sqrt(1-moonEccentricity*moonEccentricity);
 
 let bodies = [];
 
@@ -98,8 +106,6 @@ function loadScene(){
 
 	scene.add(room);
 
-	let texEarth = new THREE.ImageUtils.loadTexture("textures/earthmap1k.jpg");
-	let materialearth	 = new THREE.MeshLambertMaterial({side: THREE.Frontside,ambient:0xFFFFFF, map: texEarth});
 
 	let spriteMaterial = new THREE.SpriteMaterial(
 	{
@@ -112,9 +118,17 @@ function loadScene(){
 	sprite.scale.set(9*sunRadius, 9*sunRadius,9*sunRadius);
 		scene.add(sprite); // this centers the glow at the mesh
 
-	earthGeometry = new THREE.SphereGeometry(2, 32,32 );
-	earth = new THREE.Mesh(earthGeometry,materialearth);
+	let texEarth = new THREE.ImageUtils.loadTexture("textures/earthmap1k.jpg");
+	let materialEarth	 = new THREE.MeshLambertMaterial({side: THREE.Frontside,ambient:0xFFFFFF, map: texEarth});
+	let earthGeometry = new THREE.SphereGeometry(2, 32,32 );
+	earth = new THREE.Mesh(earthGeometry, materialEarth);
 	scene.add(earth);
+
+	let texMoon = new THREE.ImageUtils.loadTexture("textures/moonmap1k.jpg");
+	let materialMoon	 = new THREE.MeshLambertMaterial({side: THREE.Frontside,ambient:0xFFFFFF, map: texMoon});
+	let moonGeometry = new THREE.SphereGeometry(moonRadius, 32,32 );
+	moon = new THREE.Mesh(moonGeometry, materialMoon);
+	scene.add(moon);
 }
 
 let oldTime = Date.now();
@@ -129,11 +143,15 @@ function update(){
 	sunlight.position.x = 1 /(Math.sqrt(Math.cos(sunTheta)*Math.cos(sunTheta)/(sunMajorAxis*sunMajorAxis)+ Math.sin(sunTheta)*Math.sin(sunTheta)/(sunMinorAxis*sunMinorAxis))) * Math.cos(sunTheta);
 	sunlight.position.z =  1 /(Math.sqrt(Math.cos(sunTheta)*Math.cos(sunTheta)/(sunMajorAxis*sunMajorAxis)+ Math.sin(sunTheta)*Math.sin(sunTheta)/(sunMinorAxis*sunMinorAxis))) * Math.sin(sunTheta);
 
+	moon.position.x = 1 /(Math.sqrt(Math.cos(moonTheta)*Math.cos(moonTheta)/(moonMajorAxis*moonMajorAxis)+ Math.sin(moonTheta)*Math.sin(moonTheta)/(moonMinorAxis*moonMinorAxis))) * Math.cos(moonTheta);
+	moon.position.z =  1 /(Math.sqrt(Math.cos(moonTheta)*Math.cos(moonTheta)/(moonMajorAxis*moonMajorAxis)+ Math.sin(moonTheta)*Math.sin(moonTheta)/(moonMinorAxis*moonMinorAxis))) * Math.sin(moonTheta);
+
   let currentTime = Date.now();
 
   timeScale = .01;
 
 	sunTheta += Math.PI*2/  sunOrbitalPeriod /365*timeScale*(currentTime-oldTime);
+	moonTheta += Math.PI*2/  moonOrbitalPeriod /365*timeScale*(currentTime-oldTime);
 
 	bodies.forEach(function(body, index) {
 		body.update(timeScale, currentTime - oldTime);
