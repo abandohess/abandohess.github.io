@@ -10,6 +10,10 @@ var audioCtx2 = new (window.AudioContext || window.webkitAudioContext)();
 var source2;
 var stream2;
 
+setTimeout(function() {
+  audioCtx2.resume();
+}, 1000);
+
 // console.log(audioCtx2);
 
 

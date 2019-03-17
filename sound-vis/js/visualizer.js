@@ -10,6 +10,10 @@ var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var source;
 var stream;
 
+setTimeout(function() {
+  audioCtx.resume();
+}, 2000);
+
 
 //set up the different audio nodes we will use for the app
 var analyser = audioCtx.createAnalyser();
@@ -159,7 +163,7 @@ $container.append(renderer.domElement);
 var particleCount = 100000
     particles = new THREE.Geometry(),
     pMaterial = new THREE.ParticleBasicMaterial({
-      color: 0xFFFFFF,
+      color: 0x000000,
       size: 2
     });
 
@@ -185,7 +189,7 @@ var particleSystem = new THREE.ParticleSystem(
   particles,
   pMaterial);
 
-particleSystem.materials[0].color = new THREE.Color(rgbToHex(255,255,255));
+particleSystem.materials[0].color = new THREE.Color(rgbToHex(0,0,0));
 
 // add it to the scene
 scene.addChild(particleSystem);
