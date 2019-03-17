@@ -26,10 +26,10 @@ analyser2.smoothingTimeConstant = 0.85;
 var dataArrayAlt2;
 if (navigator.mediaDevices.getUserMedia) {
    var constraints2 = { audio: true }
-   navigator.mediaDevices.getUserMedia (constraints2)
+   navigator.mediaDevices.getUserMedia(constraints2)
       .then(
         function(stream2) {
-           source2 = audioCtx.createMediaStreamSource(stream2);
+           source2 = audioCtx2.createMediaStreamSource(stream2);
            source2.connect(analyser2);
 //            analyser2.connect(gainNode2);
 //            gainNode2.connect(audioCtx2.destination);
@@ -55,7 +55,7 @@ var MAX_VOLUME_PER_BIN2 = 150;
 var MAX_COLOR_PER_BIN2 = 100;
 
 var BIN_FREQ_SIZE = 44100.0 / 256;
-console.log("bin freq size", BIN_FREQ_SIZE)
+// console.log("bin freq size", BIN_FREQ_SIZE)
 
 var MIN_RADIUS2 = 10;
 var MAX_RADIUS2 = 500;
@@ -104,10 +104,10 @@ function getMaxFrequency(array, max) {
   for (let i = 0; i < analyser2.fftSize / 2; i++) {
     if (array[i] > 50) {
       if (i * BIN_FREQ_SIZE > new_max) {
-        console.log('************');
-        console.log('i', i);
-        console.log('new max', i * BIN_FREQ_SIZE);
-        console.log(dataArrayAlt);
+        // console.log('************');
+        // console.log('i', i);
+        // console.log('new max', i * BIN_FREQ_SIZE);
+        // console.log(dataArrayAlt);
       }
       new_max = Math.max(new_max, i * BIN_FREQ_SIZE);
     }
@@ -209,7 +209,7 @@ function update2() {
   if (timeLapse.length > 0) {
     if (oldSize != timeLapse.length) {
       maxFreq = getMaxFrequency(dataArrayAlt, maxFreq);
-      console.log(maxFreq);
+      // console.log(maxFreq);
       oldSize = timeLapse.length;
 
       let numColumns = timeLapse.length;

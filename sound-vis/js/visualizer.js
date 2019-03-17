@@ -237,13 +237,15 @@ function update() {
 requestAnimFrame(update);
 
 setInterval(function(){
-  analyser.getByteFrequencyData(dataArrayAlt);
+  if (dataArrayAlt != null) {
+    analyser.getByteFrequencyData(dataArrayAlt);
 
-  let volumeRatio = getVolumeRatio(dataArrayAlt);
-  let height = MIN_RADIUS + volumeRatio * (MAX_RADIUS - MIN_RADIUS);
-  let color = getRGB(dataArrayAlt);
+    let volumeRatio = getVolumeRatio(dataArrayAlt);
+    let height = MIN_RADIUS + volumeRatio * (MAX_RADIUS - MIN_RADIUS);
+    let color = getRGB(dataArrayAlt);
 
-  // console.log("her2e");
+    // console.log("her2e");
 
-  timeLapse.push({height: height, color: color});
+    timeLapse.push({height: height, color: color});
+  }
 }, 100);
