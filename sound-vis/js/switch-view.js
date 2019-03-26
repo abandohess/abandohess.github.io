@@ -6,6 +6,7 @@ $( "#change-view" ).click(function() {
     $("#container").css("display", "inline");
     $("#container2").css("display", "none");
   } else {
+    initParticleSystems();
      $("#container").css("display", "none");
      $("#container2").css("display", "inline");
   }

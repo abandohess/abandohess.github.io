@@ -1,76 +1,11 @@
-// CAPTURE THE SOUND
-// Older browsers might not implement mediaDevices at all, so we set an empty object first
-if (navigator.mediaDevices === undefined) {
-  navigator.mediaDevices = {};
-}
-
-// set up forked web audio context, for multiple browsers
-// window. is needed otherwise Safari explodes
-var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-var source;
-var stream;
-
-setTimeout(function() {
-  audioCtx.resume();
-}, 2000);
-
-
-//set up the different audio nodes we will use for the app
-var analyser = audioCtx.createAnalyser();
-analyser.minDecibels = -90;
-analyser.maxDecibels = -10;
-analyser.smoothingTimeConstant = 0.85;
-
-// var gainNode = audioCtx.createGain();
-
-
-//main block for doing the audio recording
-var dataArrayAlt;
-if (navigator.mediaDevices.getUserMedia) {
-   var constraints = { audio: true }
-   navigator.mediaDevices.getUserMedia (constraints)
-      .then(
-        function(stream) {
-           source = audioCtx.createMediaStreamSource(stream);
-           source.connect(analyser);
-//            analyser.connect(gainNode);
-//            gainNode.connect(audioCtx.destination);
-           // analyser.connect(audioCtx.destination);
-           analyser.fftSize = 256;
-           var bufferLengthAlt = analyser.frequencyBinCount;
-           dataArrayAlt = new Uint8Array(bufferLengthAlt);
-           analyser.getByteFrequencyData(dataArrayAlt);
-      })
-      .catch( function(err) {
-        console.log('The following getUserMedia error occured: ' + err);
-      });
-} else {
-        console.log('getUserMedia not supported on your browser!');
-}
-
-
-
-// VISUAL EFFECTS with help from https://aerotwist.com/tutorials/creating-particles-with-three-js/
-// Constants
-var NUM_BINS = 25; // Array of frequencies has 128 bins. Most of them are not used
-var MAX_VOLUME_PER_BIN = 150;
-var MAX_COLOR_PER_BIN = 100;
-
 var MIN_RADIUS = 10;
 var MAX_RADIUS = 500;
 var target_radius = 50;
 var PARTICLE_SPEED = 3;
 
-timeLapse = [];
-
-// scene size
-var WIDTH = window.innerWidth,
-    HEIGHT = window.innerHeight;
-// camera attributes
-var VIEW_ANGLE = 45,
-    ASPECT = WIDTH / HEIGHT,
-    NEAR = 0.1,
-    FAR = 10000;
+setTimeout(function() {
+  audioCtx.resume();
+}, 2000);
 
 // Utility Functions
 function rgbToHex(r, g, b) {
@@ -89,17 +24,12 @@ function getRGB(arr) {
   }
 
   let totalCount = redCount + greenCount + blueCount;
-  // console.log(redCount, greenCount, blueCount, totalCount);
   return rgbToHex(Math.floor(redCount/totalCount * 255), Math.floor(greenCount/totalCount * 255), Math.floor(blueCount/totalCount * 255));
 }
 
 function getParticleSpeed(startingRadius) {
   return .1 + (startingRadius / 100) ** 1.7;
 }
-
-// function getTargetRadius(target_radius, startingRadius) {
-//   return target_radius - ((startingRadius / 100) ** 2);
-// }
 
 function getNewParticleCoordinates(x, y, startingRadius) {
   let currRadius = Math.sqrt(x**2 + y**2);
@@ -240,6 +170,7 @@ function update() {
 
 requestAnimFrame(update);
 
+// gather data every .1 seconds for the time lapse view
 setInterval(function(){
   if (dataArrayAlt != null) {
     analyser.getByteFrequencyData(dataArrayAlt);
@@ -247,8 +178,6 @@ setInterval(function(){
     let volumeRatio = getVolumeRatio(dataArrayAlt);
     let height = MIN_RADIUS + volumeRatio * (MAX_RADIUS - MIN_RADIUS);
     let color = getRGB(dataArrayAlt);
-
-    // console.log("her2e");
 
     timeLapse.push({height: height, color: color});
   }
