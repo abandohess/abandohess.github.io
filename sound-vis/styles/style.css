@@ -14,9 +14,6 @@ body, html {
   font-size: 1em !important;
   cursor: pointer;
   position: absolute;
-
-  bottom: 40px;
-  right: 40px;
 }
 
 .form-btn:hover{
@@ -27,4 +24,17 @@ body, html {
 
 .form-btn:active{
   opacity: 0.9;
+}
+
+#change-view {
+  bottom: 40px;
+  right: 40px;
+  display: none;
+}
+
+#start-vis {
+  top: 50%;
+  left: 50%;
+  margin-left: -90px;
+  margin-top: -24px;
 }

@@ -1,3 +1,3 @@
 # Sound Visualizer
 
-Anders Bando-Hess and Thanh Nguyen - October 2018
+Anders Bando-Hess and Isaac Gluck - October 2018

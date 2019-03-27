@@ -4,6 +4,21 @@ if (navigator.mediaDevices === undefined) {
   navigator.mediaDevices = {};
 }
 
+// gather data every .1 seconds for the time lapse view
+setInterval(function(){
+  if (dataArrayAlt != null && view === 1 && timeLapse.length <= particleSystems.length) {
+    analyser.getByteFrequencyData(dataArrayAlt);
+
+    let volumeRatio = getVolumeRatio(dataArrayAlt);
+    let height = MIN_RADIUS + volumeRatio * (MAX_RADIUS - MIN_RADIUS);
+    let color = getRGB(dataArrayAlt);
+
+    timeLapse.push({height: height, color: color});
+    // console.log(timeLapse.length, particleSystems.length)
+  }
+}, 100);
+
+
 var BIN_FREQ_SIZE = 44100.0 / 256;
 
 var particleSystems = [];
@@ -27,11 +42,15 @@ function getMaxFrequency(array, max) {
   return new_max;
 }
 
-function initParticleSystems() {
+function clearParicleSystems() {
   particleSystems = [];
   timeLapse = [];
+}
+
+function initParticleSystems() {
+  clearParicleSystems();
   timelapseScene = new THREE.Scene();
-  for (let systemNum = 0; systemNum < 500; systemNum++) {
+  for (let systemNum = 0; systemNum < 1800; systemNum++) {
     let systemParticles = new THREE.Geometry();
     for (let i = 0; i < 800; i++) {
       let particle = new THREE.Vertex( new THREE.Vector3(0, 0, 0) );
@@ -79,6 +98,7 @@ $container2.append(timelapseRenderer.domElement);
 var oldSize = 0;
 
 var maxFreq = 0;
+
 // animation loop
 function timelapseUpdate() {
   // if we have collected at least one data point
@@ -94,7 +114,7 @@ function timelapseUpdate() {
       let numColumns = timeLapse.length;
       let currXPos = 0; // used to place a column
       let xStep = window.innerWidth / numColumns; // how much space should be between each column in the timelapse
-      for (let i = 0; i < numColumns; i++) {
+      for (let i = 0; i < numColumns && i < particleSystems.length; i++) {
 
         let heightColor = timeLapse[i];
         let currYPos = 0; // place of particle in particle column (bar)

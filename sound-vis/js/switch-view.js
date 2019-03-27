@@ -1,16 +1,13 @@
-let showCircle = true;
 $( "#change-view" ).click(function() {
-   // $("#container").css("display", "none");
-  showCircle = !showCircle;
-  if (showCircle) {
+  if (view === 1) {
     $("#container").css("display", "inline");
     $("#container2").css("display", "none");
+    view = 0;
+    clearParicleSystems();
   } else {
     initParticleSystems();
-     $("#container").css("display", "none");
-     $("#container2").css("display", "inline");
+    $("#container").css("display", "none");
+    $("#container2").css("display", "inline");
+    view = 1;
   }
 });
-
-var sounds = document.getElementsByTagName('audio');
-for(i=0; i<sounds.length; i++) sounds[i].pause();
